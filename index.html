@@ -77,7 +77,7 @@
             height: auto;
         }
 
-        /* dwie sekcje obok siebie */
+        /* układ sekcji */
         .sections-container {
             display: flex;
             justify-content: center;
@@ -87,30 +87,30 @@
             padding: 20px;
         }
 
+        /* panel sekcji */
         .tools-section, .other-section {
-            background-color: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(6px);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
             padding: 30px 40px;
             width: 420px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
         }
 
-        /* efekt rozświetlenia sekcji po najechaniu */
         .tools-section:hover, .other-section:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.7);
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.12);
+            box-shadow: 0 0 35px rgba(0,255,255,0.3);
         }
 
         h2 {
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            background: rgba(0,0,0,0.3);
-            padding: 8px 16px;
-            border-radius: 10px;
-            display: inline-block;
+            margin-bottom: 25px;
+            font-size: 1.7em;
+            letter-spacing: 1px;
+            color: #00f0ff;
+            text-shadow: 0 0 12px rgba(0,255,255,0.6), 0 0 24px rgba(0,255,255,0.3);
         }
 
         .links {
@@ -121,7 +121,7 @@
         }
 
         .links a {
-            background-color: rgba(255,255,255,0.08);
+            background-color: rgba(255,255,255,0.1);
             padding: 10px 20px;
             border-radius: 10px;
             color: white;
@@ -132,12 +132,13 @@
             gap: 10px;
             width: 85%;
             justify-content: center;
-            transition: background 0.25s ease, transform 0.15s ease;
+            transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
         }
 
         .links a:hover {
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(0,255,255,0.2);
             transform: scale(1.05);
+            box-shadow: 0 0 12px rgba(0,255,255,0.3);
         }
 
         .links a i {
@@ -146,10 +147,9 @@
         }
 
         .links a:hover i {
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+            text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
         }
 
-        /* responsywność */
         @media (max-width: 900px) {
             .sections-container {
                 flex-direction: column;
@@ -182,23 +182,23 @@
                 <a href="https://www.abuseipdb.com/" target="_blank"><i class="fa-solid fa-shield-halved"></i> AbuseIP</a>
                 <a href="https://www.nirsoft.net/" target="_blank"><i class="fa-solid fa-screwdriver-wrench"></i> NirSoft</a>
                 <a href="https://www.virustotal.com" target="_blank"><i class="fa-solid fa-virus"></i> VirusTotal</a>
-                <a href="https://gchq.github.io/CyberChef/" target="_blank"><i class="fa-solid fa-bowl-food"></i> CyberChef</a>
+                <a href="https://gchq.github.io/CyberChef/" target="_blank"><i class="fa-solid fa-flask"></i> CyberChef</a>
                 <a href="https://bitwarden.com/" target="_blank"><i class="fa-solid fa-lock"></i> BitWarden</a>
                 <a href="https://cryptomator.org/" target="_blank"><i class="fa-solid fa-vault"></i> Cryptomator</a>
             </div>
         </section>
 
-        <!-- Sekcja Inne -->
+        <!-- Sekcja Utilities -->
         <section class="other-section">
-            <h2>Inne</h2>
+            <h2>Utilities</h2>
             <div class="links">
                 <a href="https://basewin.pl/" target="_blank"><i class="fa-solid fa-desktop"></i> BaseWin</a>
                 <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank"><i class="fa-solid fa-key"></i> Activation</a>
                 <a href="https://github.com/ChrisTitusTech/winutil" target="_blank"><i class="fa-solid fa-gears"></i> WinUtil</a>
-                <a href="https://www.bleachbit.org/download" target="_blank"><i class="fa-solid fa-broom"></i> BleachBit</a>
-                <a href="https://e.pcloud.link/publink/show?code=XZn3nUZafgKHrWWnckwTrvenOV4t7PTVPe7" target="_blank"><i class="fa-solid fa-trash-arrow-up"></i> Revo Uninstaller Pro</a>
+                <a href="https://github.com/yokoffing/Betterfox" target="_blank"><i class="fa-solid fa-fire"></i> BetterFox</a>
                 <a href="https://rustdesk.com/" target="_blank"><i class="fa-solid fa-network-wired"></i> RustDesk</a>
-                <a href="https://github.com/yokoffing/Betterfox" target="_blank"><i class="fa-solid fa-compass"></i> BetterFox</a>
+                <a href="https://www.bleachbit.org/download" target="_blank"><i class="fa-solid fa-broom"></i> BleachBit</a>
+                <a href="https://e.pcloud.link/publink/show?code=XZn3nUZafgKHrWWnckwTrvenOV4t7PTVPe7" target="_blank"><i class="fa-solid fa-trash-can"></i> Revo Uninstaller</a>
                 <a href="https://www.7-zip.org/" target="_blank"><i class="fa-solid fa-file-zipper"></i> 7zip</a>
                 <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank"><i class="fa-solid fa-server"></i> Selfhosted</a>
             </div>
