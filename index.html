@@ -6,173 +6,161 @@
 <title>Darriox Hub</title>
 
 <!-- Czcionka Poppins -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <!-- Font Awesome CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yu4J6p6FkjpZzY3M7P3Dfxu+ryj4J6sLrL6v0+Z2p/9e8M4yFq0E0EXhQHhQF8j5vTfKc/Zsm9sU9D+Rl0KpVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
 html, body {
-    height: 100%;
     margin: 0;
-    font-family: 'Poppins', Arial, sans-serif;
-    overflow-x: hidden;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
     color: white;
     background-color: #121212;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
+    overflow-x: hidden;
 }
 
 body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: url('https://www.purepc.pl/image/news/2023/08/28_gothic_ii_dzieje_khorinis_autorzy_wyczekiwanej_modyfikacji_oglosili_zakonczenie_prac_nad_projektem_0_b.jpg') center/cover no-repeat;
     filter: brightness(0.4);
-    animation: moveBG 30s ease infinite;
     z-index: -1;
+    animation: moveBG 30s ease infinite;
 }
 
 @keyframes moveBG {
-    0% { transform: scale(1) translate(0,0); }
+    0%, 100% { transform: scale(1) translate(0,0); }
     50% { transform: scale(1.05) translate(10px,10px); }
-    100% { transform: scale(1) translate(0,0); }
 }
 
 header {
     text-align: center;
-    padding: 40px 20px 20px;
+    padding: 30px 20px;
 }
 
-header h1 {
-    font-size: 3.2em;
-    font-weight: 800;
-    color: #00ffe1;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    animation: glowText 2s ease-in-out infinite alternate;
+#hub-title {
+    font-size: 3em;
+    font-weight: 700;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    animation: pulseText 3s infinite ease-in-out;
 }
 
-@keyframes glowText {
-    from { text-shadow: 2px 2px 8px rgba(0,255,255,0.5); }
-    to { text-shadow: 2px 2px 20px rgba(0,255,255,1); }
+@keyframes pulseText {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
 }
 
 .center-gif {
     display: flex;
     justify-content: center;
-    margin: 20px 0 40px;
+    padding: 20px;
 }
 
 .center-gif img {
     max-width: 300px;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.7);
 }
 
-section {
+.card {
+    background: rgba(0,0,0,0.5);
+    border-radius: 15px;
     padding: 20px;
+    min-width: 250px;
 }
 
-section h2 {
+.card h2 {
     text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #00ffe1;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 5px black;
 }
 
 .links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .links a {
     background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(8px);
-    padding: 15px 20px;
-    border-radius: 15px;
+    padding: 10px;
+    border-radius: 8px;
     color: white;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 250px;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .links a:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.1);
-    box-shadow: 0 8px 20px rgba(0,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.05);
 }
 
-.links i {
-    font-size: 1.4em;
-    color: #00ffe1;
+h2.section-title {
+    font-size: 2em;
+    color: #ffcc00;
 }
 
-.tools-section, .other-section {
-    margin-top: 40px;
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2.2em;
-    }
-    .links {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-}
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Darriox Hub</h1>
+    <h1 id="hub-title">Darriox Hub</h1>
 </header>
 
-<div class="center-gif">
+<section class="center-gif">
     <img src="https://images.steamusercontent.com/ugc/2046370627406611281/518D918BABCFE25C60BA9E7357FE42F0CB194426/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Animowany GIF">
-</div>
+</section>
 
 <section class="tools-section">
-    <h2>CyberSec Tools</h2>
-    <div class="links">
-        <a href="https://haveibeenpwned.com/" target="_blank"><i class="fas fa-user-secret"></i>HaveIBeenPwned</a>
-        <a href="https://www.abuseipdb.com/" target="_blank"><i class="fas fa-shield-alt"></i>AbuseIPDB</a>
-        <a href="https://www.nirsoft.net/" target="_blank"><i class="fas fa-tools"></i>NirSoft</a>
-        <a href="https://www.virustotal.com" target="_blank"><i class="fas fa-virus"></i>VirusTotal</a>
-        <a href="https://gchq.github.io/CyberChef/" target="_blank"><i class="fas fa-utensils"></i>CyberChef</a>
-        <a href="https://bitwarden.com/" target="_blank"><i class="fas fa-lock"></i>BitWarden</a>
-        <a href="https://cryptomator.org/" target="_blank"><i class="fas fa-lock-open"></i>Cryptomator</a>
+    <div class="card">
+        <h2 class="section-title">CyberSec Tools</h2>
+        <div class="links">
+            <a href="https://haveibeenpwned.com/" target="_blank"><i class="fas fa-user-secret"></i> HaveIBeenPwned</a>
+            <a href="https://www.abuseipdb.com/" target="_blank"><i class="fas fa-shield-alt"></i> AbuseIPDB</a>
+            <a href="https://www.nirsoft.net/" target="_blank"><i class="fas fa-tools"></i> NirSoft</a>
+            <a href="https://www.virustotal.com" target="_blank"><i class="fas fa-virus"></i> VirusTotal</a>
+            <a href="https://gchq.github.io/CyberChef/" target="_blank"><i class="fas fa-utensils"></i> CyberChef</a>
+            <a href="https://bitwarden.com/" target="_blank"><i class="fas fa-lock"></i> BitWarden</a>
+            <a href="https://cryptomator.org/" target="_blank"><i class="fas fa-key"></i> Cryptomator</a>
+        </div>
     </div>
 </section>
 
-<section class="other-section">
-    <h2>Utilities & Resources</h2>
-    <div class="links">
-        <a href="https://basewin.pl/" target="_blank"><i class="fas fa-desktop"></i>BaseWin</a>
-        <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank"><i class="fas fa-key"></i>Activation</a>
-        <a href="https://github.com/ChrisTitusTech/winutil" target="_blank"><i class="fas fa-cogs"></i>WinUtil</a>
-        <a href="https://github.com/yokoffing/Betterfox" target="_blank"><i class="fas fa-firefox"></i>BetterFox</a>
-        <a href="https://www.bleachbit.org/download" target="_blank"><i class="fas fa-broom"></i>BleachBit</a>
-        <a href="https://e.pcloud.link/publink/show?code=XZn3nUZafgKHrWWnckwTrvenOV4t7PTVPe7" target="_blank"><i class="fas fa-trash-alt"></i>Revo Uninstaller Pro</a>
-        <a href="https://rustdesk.com/" target="_blank"><i class="fas fa-desktop"></i>RustDesk</a>
-        <a href="https://www.7-zip.org/" target="_blank"><i class="fas fa-file-archive"></i>7zip</a>
-        <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank"><i class="fas fa-server"></i>Selfhosted</a>
+<section class="resources-section">
+    <div class="card">
+        <h2 class="section-title">Windows & Utilities</h2>
+        <div class="links">
+            <a href="https://basewin.pl/" target="_blank"><i class="fas fa-windows"></i> BaseWin</a>
+            <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank"><i class="fas fa-key"></i> Activation</a>
+            <a href="https://github.com/ChrisTitusTech/winutil" target="_blank"><i class="fas fa-tools"></i> WinUtil</a>
+            <a href="https://github.com/yokoffing/Betterfox" target="_blank"><i class="fas fa-firefox-browser"></i> BetterFox</a>
+            <a href="https://www.bleachbit.org/download" target="_blank"><i class="fas fa-broom"></i> BleachBit</a>
+            <a href="https://rustdesk.com/" target="_blank"><i class="fas fa-desktop"></i> RustDesk</a>
+            <a href="https://www.7-zip.org/" target="_blank"><i class="fas fa-file-archive"></i> 7-Zip</a>
+        </div>
     </div>
 </section>
 
