@@ -54,16 +54,32 @@
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin: 0;
-            animation: fadePulse 3s ease-in-out infinite;
-            text-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            animation: neonPulse 2s ease-in-out infinite;
+            color: #00f0ff;
+            text-shadow:
+                0 0 5px #00f0ff,
+                0 0 10px #00f0ff,
+                0 0 20px #00f0ff,
+                0 0 40px #00f0ff;
         }
 
-        @keyframes fadePulse {
-            0% { opacity: 0; transform: scale(0.97); }
-            40% { opacity: 1; transform: scale(1.03); }
-            100% { opacity: 0.95; transform: scale(0.98); }
+        @keyframes neonPulse {
+            0%, 100% {
+                text-shadow:
+                    0 0 5px #00f0ff,
+                    0 0 10px #00f0ff,
+                    0 0 20px #00f0ff,
+                    0 0 40px #00f0ff;
+            }
+            50% {
+                text-shadow:
+                    0 0 10px #00f0ff,
+                    0 0 20px #00f0ff,
+                    0 0 30px #00f0ff,
+                    0 0 50px #00f0ff;
+            }
         }
 
         .center-gif {
@@ -111,6 +127,11 @@
             letter-spacing: 1px;
             color: #00f0ff;
             text-shadow: 0 0 12px rgba(0,255,255,0.6), 0 0 24px rgba(0,255,255,0.3);
+            transition: text-shadow 0.3s ease;
+        }
+
+        h2:hover {
+            text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
         }
 
         .links {
@@ -166,7 +187,7 @@
 <body>
 
     <section id="home">
-        <h1>Witam</h1>
+        <h1>Welcome</h1>
 
         <div class="center-gif">
             <img src="https://images.steamusercontent.com/ugc/2046370627406611281/518D918BABCFE25C60BA9E7357FE42F0CB194426/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Animowany GIF">
@@ -196,14 +217,4 @@
                 <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank"><i class="fa-solid fa-key"></i> Activation</a>
                 <a href="https://github.com/ChrisTitusTech/winutil" target="_blank"><i class="fa-solid fa-gears"></i> WinUtil</a>
                 <a href="https://github.com/yokoffing/Betterfox" target="_blank"><i class="fa-solid fa-fire"></i> BetterFox</a>
-                <a href="https://rustdesk.com/" target="_blank"><i class="fa-solid fa-network-wired"></i> RustDesk</a>
-                <a href="https://www.bleachbit.org/download" target="_blank"><i class="fa-solid fa-broom"></i> BleachBit</a>
-                <a href="https://e.pcloud.link/publink/show?code=XZn3nUZafgKHrWWnckwTrvenOV4t7PTVPe7" target="_blank"><i class="fa-solid fa-trash-can"></i> Revo Uninstaller</a>
-                <a href="https://www.7-zip.org/" target="_blank"><i class="fa-solid fa-file-zipper"></i> 7zip</a>
-                <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank"><i class="fa-solid fa-server"></i> Selfhosted</a>
-            </div>
-        </section>
-    </div>
-
-</body>
-</html>
+                <a href="https://rustdesk.com/" target="_blank"><i class="fa-solid fa_
