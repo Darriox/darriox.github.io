@@ -5,25 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Darriox Hub</title>
 
-<!-- Czcionka Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yu4J6p6FkjpZzY3M7P3Dfxu+ryj4J6sLrL6v0+Z2p/9e8M4yFq0E0EXhQHhQF8j5vTfKc/Zsm9sU9D+Rl0KpVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Poppins', Arial, sans-serif;
-    overflow-x: hidden;
-    color: white;
-    background-color: #121212;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: white;
 }
 
 body::before {
@@ -35,135 +26,113 @@ body::before {
     height: 100%;
     background: url('https://www.purepc.pl/image/news/2023/08/28_gothic_ii_dzieje_khorinis_autorzy_wyczekiwanej_modyfikacji_oglosili_zakonczenie_prac_nad_projektem_0_b.jpg') center/cover no-repeat;
     filter: brightness(0.4);
-    animation: moveBG 30s ease infinite;
     z-index: -1;
 }
 
-@keyframes moveBG {
-    0% { transform: scale(1) translate(0,0); }
-    50% { transform: scale(1.05) translate(10px,10px); }
-    100% { transform: scale(1) translate(0,0); }
+header {
+    text-align: center;
+    padding: 30px 20px;
 }
 
-h1#hub-title {
-    font-size: 3.5em;
+#hub-title {
+    font-size: 3em;
     font-weight: 700;
     background: linear-gradient(45deg, #00ffff, #ff00ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    animation: pulseText 3s infinite ease-in-out;
-    margin-top: 40px;
-    text-align: center;
-}
-
-@keyframes pulseText {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
 }
 
 section {
-    padding: 40px 20px;
-    text-align: center;
     display: flex;
     justify-content: center;
-    gap: 40px;
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(0,0,0,0.5);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    transition: 0.2s ease;
+}
+
+.links a:hover {
+    background: rgba(255,255,255,0.1);
 }
 
 .center-gif {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    padding: 20px;
 }
 
 .center-gif img {
     max-width: 300px;
     height: auto;
 }
-
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.links a {
-    background: rgba(0,0,0,0.4);
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.links a:hover {
-    background: rgba(255,255,255,0.2);
-    transform: scale(1.05);
-}
-
-.tools-section, .resources-section {
-    background: rgba(0,0,0,0.5);
-    border-radius: 15px;
-    padding: 20px;
-    max-width: 500px;
-}
-
-h2 {
-    margin-bottom: 15px;
-    font-size: 1.8em;
-    text-shadow: 1px 1px 5px black;
-}
-
-i {
-    font-size: 1.2em;
-}
-
-.resources-section h2 {
-    font-size: 2em;
-    color: #ffcc00;
-}
 </style>
 </head>
 <body>
 
-<h1 id="hub-title">Darriox Hub</h1>
+<header>
+    <h1 id="hub-title">Darriox Hub</h1>
+</header>
+
+<section class="center-gif">
+    <img src="https://images.steamusercontent.com/ugc/2046370627406611281/518D918BABCFE25C60BA9E7357FE42F0CB194426/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="GIF">
+</section>
 
 <section>
-    <div class="center-gif">
-        <img src="https://images.steamusercontent.com/ugc/2046370627406611281/518D918BABCFE25C60BA9E7357FE42F0CB194426/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Animowany GIF">
+    <div class="card">
+        <h2>CyberSec Tools</h2>
+        <div class="links">
+            <a href="https://haveibeenpwned.com/" target="_blank"><i class="fas fa-user-secret"></i>HaveIBeenPwned</a>
+            <a href="https://www.abuseipdb.com/" target="_blank"><i class="fas fa-shield-alt"></i>AbuseIPDB</a>
+            <a href="https://www.nirsoft.net/" target="_blank"><i class="fas fa-tools"></i>NirSoft</a>
+            <a href="https://www.virustotal.com" target="_blank"><i class="fas fa-virus"></i>VirusTotal</a>
+            <a href="https://gchq.github.io/CyberChef/" target="_blank"><i class="fas fa-utensils"></i>CyberChef</a>
+            <a href="https://bitwarden.com/" target="_blank"><i class="fas fa-lock"></i>BitWarden</a>
+            <a href="https://cryptomator.org/" target="_blank"><i class="fas fa-key"></i>Cryptomator</a>
+        </div>
     </div>
-</section>
 
-<section class="tools-section">
-    <h2>CyberSec Tools</h2>
-    <div class="links">
-        <a href="https://haveibeenpwned.com/" target="_blank"><i class="fas fa-user-secret"></i>HaveIBeenPwned</a>
-        <a href="https://www.abuseipdb.com/" target="_blank"><i class="fas fa-shield-alt"></i>AbuseIPDB</a>
-        <a href="https://www.nirsoft.net/" target="_blank"><i class="fas fa-tools"></i>NirSoft</a>
-        <a href="https://www.virustotal.com" target="_blank"><i class="fas fa-virus"></i>VirusTotal</a>
-        <a href="https://gchq.github.io/CyberChef/" target="_blank"><i class="fas fa-utensils"></i>CyberChef</a>
-        <a href="https://bitwarden.com/" target="_blank"><i class="fas fa-lock"></i>BitWarden</a>
-        <a href="https://cryptomator.org/" target="_blank"><i class="fas fa-key"></i>Cryptomator</a>
-    </div>
-</section>
-
-<section class="resources-section">
-    <h2>Windows & Utilities</h2>
-    <div class="links">
-        <a href="https://basewin.pl/" target="_blank"><i class="fas fa-windows"></i>BaseWin</a>
-        <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank"><i class="fas fa-key"></i>Activation</a>
-        <a href="https://github.com/ChrisTitusTech/winutil" target="_blank"><i class="fas fa-tools"></i>WinUtil</a>
-        <a href="https://github.com/yokoffing/Betterfox" target="_blank"><i class="fas fa-firefox-browser"></i>BetterFox</a>
-        <a href="https://www.bleachbit.org/download" target="_blank"><i class="fas fa-broom"></i>BleachBit</a>
-        <a href="https://e.pcloud.link/publink/show?code=XZn3nUZafgKHrWWnckwTrvenOV4t7PTVPe7" target="_blank"><i class="fas fa-trash-alt"></i>Revo Uninstaller Pro</a>
-        <a href="https://rustdesk.com/" target="_blank"><i class="fas fa-desktop"></i>RustDesk</a>
-        <a href="https://www.7-zip.org/" target="_blank"><i class="fas fa-file-archive"></i>7-Zip</a>
-        <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank"><i class="fas fa-server"></i>Selfhosted</a>
+    <div class="card">
+        <h2>Windows & Utilities</h2>
+        <div class="links">
+            <a href="https://basewin.pl/" target="_blank"><i class="fas fa-windows"></i>BaseWin</a>
+            <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank"><i class="fas fa-key"></i>Activation</a>
+            <a href="https://github.com/ChrisTitusTech/winutil" target="_blank"><i class="fas fa-tools"></i>WinUtil</a>
+            <a href="https://github.com/yokoffing/Betterfox" target="_blank"><i class="fas fa-firefox"></i>BetterFox</a>
+            <a href="https://www.bleachbit.org/download" target="_blank"><i class="fas fa-broom"></i>BleachBit</a>
+            <a href="https://e.pcloud.link/publink/show?code=XZn3nUZafgKHrWWnckwTrvenOV4t7PTVPe7" target="_blank"><i class="fas fa-trash-alt"></i>Revo Uninstaller Pro</a>
+            <a href="https://rustdesk.com/" target="_blank"><i class="fas fa-desktop"></i>RustDesk</a>
+            <a href="https://www.7-zip.org/" target="_blank"><i class="fas fa-file-archive"></i>7-Zip</a>
+        </div>
     </div>
 </section>
 
