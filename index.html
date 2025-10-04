@@ -8,7 +8,7 @@
     <!-- Czcionka Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome CSS (bez SRI/integrity aby działało na GitHub Pages) -->
+    <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -28,7 +28,7 @@
             background-color: #121212;
         }
 
-        /* tło z obrazem + animacja */
+        /* tło z obrazem + animacja + parallax */
         body::before {
             content: "";
             position: fixed;
@@ -37,6 +37,7 @@
             width: 100%;
             height: 100%;
             background: url('https://www.purepc.pl/image/news/2023/08/28_gothic_ii_dzieje_khorinis_autorzy_wyczekiwanej_modyfikacji_oglosili_zakonczenie_prac_nad_projektem_0_b.jpg') center/cover no-repeat;
+            background-attachment: fixed;
             filter: brightness(0.40);
             animation: moveBG 30s ease-in-out infinite;
             z-index: -1;
@@ -50,7 +51,7 @@
         }
 
         section {
-            padding: 60px 20px;
+            padding: 50px 20px;
             text-align: center;
             position: relative;
         }
@@ -70,6 +71,11 @@
 
         h2 {
             margin: 0 0 20px;
+            display: inline-block;
+            background: rgba(0,0,0,0.4);
+            padding: 8px 16px;
+            border-radius: 10px;
+            backdrop-filter: blur(4px);
         }
 
         .center-gif {
@@ -104,12 +110,27 @@
             gap: 10px;
             transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
             box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .links a:nth-child(1) { animation-delay: 0.1s; }
+        .links a:nth-child(2) { animation-delay: 0.2s; }
+        .links a:nth-child(3) { animation-delay: 0.3s; }
+        .links a:nth-child(4) { animation-delay: 0.4s; }
+        .links a:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .links a i {
             font-size: 1.05em;
             width: 1.2em;
             text-align: center;
+            transition: text-shadow 0.2s ease;
         }
 
         .links a:hover {
@@ -118,20 +139,26 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.45);
         }
 
-        .tools-section {
-            margin-top: 60px;
+        .links a:hover i {
+            text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff;
         }
 
-        .tools-section h2 {
-            margin-bottom: 18px;
+        .tools-section {
+            margin-top: 30px;
         }
 
         .other-section {
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
-        .other-section h2 {
-            margin-bottom: 18px;
+        /* separator */
+        .other-section::before {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 1px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.2);
         }
 
         /* responsywność */
@@ -157,23 +184,23 @@
         <h2>CyberSec</h2>
         <div class="links">
             <a href="https://haveibeenpwned.com/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-user-secret" aria-hidden="true"></i>
+                <i class="fa-solid fa-user-secret"></i>
                 HaveIBeenPwned
             </a>
             <a href="https://www.abuseipdb.com/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <i class="fa-solid fa-shield-halved"></i>
                 AbuseIP
             </a>
             <a href="https://www.nirsoft.net/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
                 NirSoft
             </a>
             <a href="https://www.virustotal.com" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-virus" aria-hidden="true"></i>
+                <i class="fa-solid fa-virus"></i>
                 VirusTotal
             </a>
             <a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+                <i class="fa-solid fa-bowl-food"></i>
                 CyberChef
             </a>
         </div>
@@ -184,11 +211,11 @@
         <h2>Inne</h2>
         <div class="links">
             <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-server" aria-hidden="true"></i>
+                <i class="fa-solid fa-server"></i>
                 Selfhosted
             </a>
             <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-key" aria-hidden="true"></i>
+                <i class="fa-solid fa-key"></i>
                 Activation
             </a>
         </div>
