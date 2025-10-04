@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darriox.github.io</title>
+    
+    <!-- Dodanie czcionki Poppins z Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            overflow-x: hidden;
+            color: white;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #121212;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.purepc.pl/image/news/2023/08/28_gothic_ii_dzieje_khorinis_autorzy_wyczekiwanej_modyfikacji_oglosili_zakonczenie_prac_nad_projektem_0_b.jpg') center/cover no-repeat;
+            filter: brightness(0.4);
+            animation: moveBG 30s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveBG {
+            0% { transform: scale(1) translate(0,0); }
+            50% { transform: scale(1.05) translate(10px,10px); }
+            100% { transform: scale(1) translate(0,0); }
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            font-size: 3em;
+            animation: fadePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes fadePulse {
+            0% { opacity: 0; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0; transform: scale(0.95); }
+        }
+
+        h2 {
+            margin: 0 0 20px;
+        }
+
+        .center-gif {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .center-gif img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            background-color: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .links a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <section id="home">
+        <h1>Witam</h1>
+
+        <!-- GIF na środku -->
+        <div class="center-gif">
+            <img src="https://images.steamusercontent.com/ugc/2046370627406611281/518D918BABCFE25C60BA9E7357FE42F0CB194426/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Animowany GIF">
+        </div>
+    </section>
+
+    <section id="links">
+        <h2>Moje linki</h2>
+        <div class="links">
+            <a href="https://haveibeenpwned.com/" target="_blank">Pwned</a>
+            <a href="https://www.abuseipdb.com/" target="_blank">AbuseIP</a>
+            <a href="https://www.nirsoft.net/" target="_blank">NirSoft</a>
+            <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank">Selfhosted</a>
+            <a href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank">Activation</a>
+        </div>
+    </section>
+
+</body>
+</html>
